@@ -12,7 +12,29 @@ VMware Workstation은 Windows나 Linux 운영체제에서 다른 운영체제를
 <a href="https://www.vmware.com/kr/products/workstation-player/workstation-player-evaluation.html">(공식 홈페이지)</a>   
 |다운로드|Windows|Linux|Mac|
 |---|:---:|:---:|:---:|
-||<a href="https://www.vmware.com/go/getplayer-win">다운로드</a>|<a href="https://www.vmware.com/go/getplayer-linux">다운로드</a>|<a href="https://www.vmware.com/kr/products/fusion/fusion-evaluation.html">다운로드</a>|
+||<a href="https://www.vmware.com/go/getplayer-win">다운로드</a>|<a href="https://www.vmware.com/go/getplayer-linux">다운로드</a>|<a href="https://www.vmware.com/kr/products/fusion/fusion-evaluation.html">다운로드</a>|    
+
+### 1. 설치 완료 후 `Create a New Virtual Machine` 선택   
+<img src="https://ommant.com/imgs/KMU_Automobile/001.png"></img>   
+
+### 2. 다운받은 iso 파일을 선택   
+<img src="https://ommant.com/imgs/KMU_Automobile/002.png"></img>   
+
+### 3. Full name과 User name 및 암호를 설정
+크게 중요하지 않은 name이니 암호만 잘 기억하면 됨   
+<img src="https://ommant.com/imgs/KMU_Automobile/003.png"></img>   
+
+### 4. 가상 머신 이름을 지정 KMU 혹은 KMU_Automobile로 지정   
+<img src="https://ommant.com/imgs/KMU_Automobile/004.png"></img>   
+
+### 5. 가상 머신이 사용할 용량을 지정   
+5GB도 쓰지 않으니 권장 사항에 맞춰 지정
+<img src="https://ommant.com/imgs/KMU_Automobile/005.png"></img>   
+
+### 6. 가상 머신의 하드웨어를 설정
+성능에 영향을 미치는 Processor 혹은 Memory를 적당히 지정   
+최대로 지정해도 큰 문제는 없음   
+<img src="https://ommant.com/imgs/KMU_Automobile/006.png"></img>   
 <br><br>
 
 # Ubuntu 18.04 설치
