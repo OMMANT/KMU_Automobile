@@ -67,7 +67,7 @@ $ sudo apt install vim
     =>
     gpg: key F42ED6FBAB17C654: "Open Robotics <info@osrfoundation.org>" not changed
     gpg: Total number processed: 1
-    gpg:              unchanged: 1
+    gpg:              imported: 1
     ```
     1-3. 설치하기
     ```bash
@@ -76,12 +76,7 @@ $ sudo apt install vim
     ```
     sudo apt install ros-melodic-desktop-full -y
     ```
-    1-4. 환경 설정하기
-    ```bash
-    echo "source /opt/ros/melodic/setup.bash" >> ~/.bashrc
-    source ~/.bashrc
-    ```
-    1-5. 빌드 의존성 패키지 설치하기   
+    1-4. 빌드 의존성 패키지 설치하기   
     ```bash
     sudo apt install python-rosdep python-rosinstall python-rosinstall-generator python-wstool build-essential -y
     ```
@@ -90,7 +85,7 @@ $ sudo apt install vim
     sudo apt install python-rosdep
 
     sudo rosdep init
-    rosdep
+    rosdep update
     ```
 2. ROS 워크스페이스 생성   
 설치 후 ROS 작업을 할 작업 공간을 생성
@@ -102,7 +97,7 @@ $ sudo apt install vim
     =>
     ~~~~~~~~
     ####
-    #### Running command: "make -j8 -l8" in "/home/ommant/catkin_ws/build"
+    #### Running command: "make -j8 -l8" in "/home/####/catkin_ws/build"
     ####
     ```
 3. ROS 작업환경 설정   
@@ -137,7 +132,8 @@ $ sudo apt install vim
     2. Python pip 설치
         * pygame 과 pillow 를 설치하려면 pip(python package index) 가 필요
         * pip 는 파이 썬 으로 작성된 패키지 소프트웨어를 설치 · 관리하는 패키지 관리 시스템
-        * pip 는 ubuntu 18.04 의 기본 패키지가 아니 므 로 직접 설치한다
+        * pip 는 ubuntu 18.04 의 기본 패키지가 아니므로 직접 설치한다
+        * `sudo apt install python-pip`
     3. Python Pygame 설치
         * 설치 시 에러 발생하기 때문에 아래의 의존성 라이브러리 설치
             ```bash
