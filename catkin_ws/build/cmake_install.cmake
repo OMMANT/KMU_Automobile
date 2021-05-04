@@ -132,6 +132,7 @@ if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
   include("/home/ommant/KMU_Automobile/catkin_ws/build/gtest/cmake_install.cmake")
   include("/home/ommant/KMU_Automobile/catkin_ws/build/ar_viewer/cmake_install.cmake")
+  include("/home/ommant/KMU_Automobile/catkin_ws/build/xycar_sim_drive/cmake_install.cmake")
   include("/home/ommant/KMU_Automobile/catkin_ws/build/xycar_sim_parking/cmake_install.cmake")
 
 endif()

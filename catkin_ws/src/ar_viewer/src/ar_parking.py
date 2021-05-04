@@ -131,5 +131,3 @@ while not rospy.is_shutdown():
 cv2.destroyAllWindows()
 
 
-
-

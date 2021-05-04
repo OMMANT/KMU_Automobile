@@ -6,4 +6,5 @@
 # testing this directory and lists subdirectories to be tested as well.
 subdirs("gtest")
 subdirs("ar_viewer")
+subdirs("xycar_sim_drive")
 subdirs("xycar_sim_parking")

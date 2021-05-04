@@ -1,2 +1,2 @@
-ar_viewer:xycar_sim_parking
+ar_viewer:xycar_sim_drive:xycar_sim_parking
 -DCATKIN_DEVEL_PREFIX=/home/ommant/catkin_ws/devel -DCMAKE_INSTALL_PREFIX=/home/ommant/catkin_ws/install -G Unix Makefiles
