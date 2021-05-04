@@ -39,3 +39,10 @@ while not rospy.is_shutdown():
     xycar_msg.data = [angle, speed]
     motor_pub.publish(xycar_msg)
     
+# If you want to run code, follow below
+# Open Terminal(ctrl + alt + T) at VMWare 
+# Cheange Directory to ~/catkin_ws (cd ~/catkin_ws)
+# build code (cm) (Once you've done it, you don't have to do it any more.)
+# run code(roslaunch xycar_sim_drive xycar_sim_drive.launch) Press tap key(Auto-complete)
+
+# Modify ====== Code Write ====== Part 
