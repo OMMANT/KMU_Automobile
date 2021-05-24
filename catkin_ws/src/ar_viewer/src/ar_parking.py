@@ -21,6 +21,9 @@ angle, distance = 0, 1000
 btime, ctime = 0, 0
 go_back_flag = False
 
+def get_sign(N):
+    return N // abs(N)
+
 
 def callback(msg):
     global arData, ctime, speed, theta, go_back_flag
@@ -57,12 +60,11 @@ xycar_msg = Int32MultiArray()
 while not rospy.is_shutdown():
     if go_back_flag:
         print('go back flag!')
-        stime = btime
         speed = -default_speed
         angle = 0
         xycar_msg.data = [angle, speed]
         motor_pub.publish(xycar_msg)
-        if ctime - stime > 2:
+        if ctime - btime > 2:
             go_back_flag = False
             speed = default_speed
             angle = 0
@@ -92,27 +94,25 @@ while not rospy.is_shutdown():
         elif point < 25 : 
             point = 25	
 
-        img = cv2.circle(img,(point,65),15,(0,255,0),-1)  
-    
-        distance = math.sqrt(pow(arData["DX"],2) + pow(arData["DY"],2))
-        
-        cv2.putText(img, str(int(distance))+" pixel", (350,25), cv2.FONT_HERSHEY_SIMPLEX, 1, (255,255,255))
-
+        img = cv2.circle(img,(point,65),15,(0,255,0),-1)          
         dx_dy_yaw = "DX:"+str(int(arData["DX"]))+" DY:"+str(int(arData["DY"])) \
                     +" Yaw:"+ str(round(yaw,1)) 
+        cv2.putText(img, str(int(distance))+" pixel", (350,25), cv2.FONT_HERSHEY_SIMPLEX, 1, (255,255,255))
         cv2.putText(img, dx_dy_yaw, (20,25), cv2.FONT_HERSHEY_SIMPLEX, 0.7, (255,255,255))
 
         cv2.imshow('AR Tag Position', img)
         cv2.waitKey(1)
+        
+        distance = math.sqrt(pow(arData["DX"],2) + pow(arData["DY"],2))
 
         if distance != 0:
             try:
                 if abs(x) > 10 and abs(y) > 10 and distance > 250:
                     ang = math.degrees(math.atan(x / y)) 
                 else:
-                    direction = arData['DX'] // abs(arData['DX'])
+                    direction = get_sign(arData['DX'])
                     ang = 20 * direction
-                angle = ang if ang < 50 else 50
+                angle = ang if abs(ang) < 50 else 50 * get_sign(ang)
             except ValueError as e:
                 print('arData: ' + str(arData['DX']) + 'distance: ' + str(distance))
         if arData["DX"] <= 60 and arData["DY"] <= 80 and distance <= 70:
