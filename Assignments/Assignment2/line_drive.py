@@ -4,6 +4,7 @@
 import rospy
 import numpy as np
 import cv2, random, math, time
+import copy
 
 Width = 640
 Height = 480
@@ -178,7 +179,6 @@ def draw_line_and_find_angle(linearray, image):
 
 		cv2.rectangle(image, (Width // 2 - 5, y3_1 - 5), (Width // 2 + 5, y3_1 + 5), (0, 0, 255), 2)
 
-		intersection = find_intersection_point([[x1_1, y1_1], [x1_2, y1_2]], [[x2_1, y2_1], [x2_2, y2_2]])
 		angle = angle_backup
 
 		return angle	
@@ -201,14 +201,12 @@ def draw_line_and_find_angle(linearray, image):
 
 		line2_backup = copy.deepcopy(linearray[-1])
 
-		intersection = find_intersection_point([[x1_1, y1_1], [x1_2, y1_2]], [[x2_1, y2_1], [x2_2, y2_2]])
-
 		x3_1 = (x1_1 + x2_1) // 2
 		y3_1 = (y1_1 + y2_1) // 2
 		cv2.rectangle(image, (x3_1 - 5, y3_1 - 5), (x3_1 + 5, y3_1 + 5), (0, 255, 0), 2)
-
 		cv2.rectangle(image, (Width // 2 - 5, y3_1 - 5), (Width // 2 + 5, y3_1 + 5), (0, 0, 255), 2)
 
+		intersection = find_intersection_point([[x1_1, y1_1], [x1_2, y1_2]], [[x2_1, y2_1], [x2_2, y2_2]])
 		angle = cal_angle([[intersection[0], intersection[1]], [Width // 2, y3_1]])
 		angle_backup = angle
 
